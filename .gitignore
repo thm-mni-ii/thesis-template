@@ -1,0 +1,14 @@
+# Generated tex files
+
+*.aux
+*.bbl
+*.blg
+*.idx
+*.lof
+*.log
+*.lol
+*.lot
+*.nlo
+*.out
+*.synctex.gz
+*.toc

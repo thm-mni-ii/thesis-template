@@ -1,0 +1,160 @@
+% % redefine \textmu to other mu commands usefull inside text
+% \renewcommand{\textmu}{$\upmu$}
+
+% Caption with defined width
+\newcommand{\wcaption}[2]{%
+   \begin{minipage}{#1}%
+   \caption{#2}%
+   \end{minipage}%
+}
+
+\newcommand{\figureref}[1]{(Abbildung \ref{#1})}%
+\newcommand{\eqnref}[1]{(\ref{#1})}%
+
+% Command for margin text with usefull style
+%\newcommand{\marginlabel}[1]{\mbox{}\marginline{\hspace{0pt}\footnotesize\sffamily #1}}%
+\newcommand{\marginlabel}[1]{\marginnote{#1}}%
+
+%\newcommand{\comment}[1]{\marginnote{#1}}%
+
+% Enable space for figures that extent into the margin (right and/or leftside)
+% Can be used inside a figure
+% Note: sidecap defines a similar environment 'wide' !
+\newenvironment{widespace}[2]{%
+   \begin{list}{}{%
+      \setlength{\topsep}{0pt}%
+      \setlength{\leftmargin}{#1}%
+      \setlength{\rightmargin}{#2}%
+      \setlength{\listparindent}{\parindent}%
+      \setlength{\itemindent}{\parskip}%
+   }%
+   \item[]%
+}%
+{%
+   \end{list}%
+}%
+
+\newlength{\marginwidth}
+\setlength{\marginwidth}{\marginparwidth}
+\addtolength{\marginwidth}{\marginparsep}
+
+%% Beispiel:
+% \begin{figure}
+% \begin{widespace}{-\marginwidth}{0pt}
+%  \subfloat[Bergzebrastute]
+%  {\includegraphics[width=0.45\linewidth]{../Bilder/Eingewoehnung2.jpg}}
+%  \hspace*{1em}
+%  \subfloat[Morro Moco]
+%  {\includegraphics[width=0.45\linewidth]{../Bilder/bergzebra2.jpg}}
+% \end{widespace}
+% \end{figure}
+
+
+% quantum optics - Latex Commands: Math **********************************
+% ------------------------------------------------------------------------
+% by: Matthias Pospiech
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% --| Math |-------------------------------------------------------
+
+% -- Replacements --
+\newcommand{\comp}{\ast}
+%\renewcommand{\dagger}{+}
+
+
+% -- new commands --
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\Abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\Trace}[1]{\ensuremath{\Tr\{\,#1\,\}}} % Trace /Spur
+%
+
+% -- differentials --
+\renewcommand{\d}{\partial\mspace{2mu}} % partial diff
+\newcommand{\td}{\,\mathrm{d}}	% total diff
+\newcommand{\ddt}[1]{\frac{\td #1}{\td t}}
+
+% -- Abbrevitations --
+\renewcommand{\Re}{\text{Re}}			% Real value
+\renewcommand{\Im}{\text{Im}}			% Real value
+\newcommand{\complex}{\mathbb{C}} % Complex
+\newcommand{\real}{\mathbb{R}}    % Real
+%\newcommand{\R}{\real}						% Real
+%\newcommand{\N}{\mathbb{N}}
+%\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\D}{\mathcal{D}}
+%
+\newcommand{\Ham}{\mathcal{H}}    % Hamilton
+\newcommand{\Prob}{\mathscr{P}}    % Hamilton
+\newcommand{\unity}{\mathds{1}}   % Real
+%
+
+\newcommand\gammab{\gamma_\bot}
+\newcommand\gammap{\gamma_\parallel}
+\newcommand\gammai{\gamma_\text{int}}
+\newcommand\gammae{\gamma_\text{ext}}
+
+% -- New Operators --
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\grad}{grad}
+%\DeclareMathOperator{\div}{div}
+\renewcommand{\div}{\text{div}\,}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\const}{const}
+\DeclareMathOperator{\e}{e} 			% exponatial Function
+
+% -- new symbols --
+\newcommand{\laplace}{\Delta}
+\newcommand{\dalembert}{\Box}
+
+% -- new arrows --
+\renewcommand{\leadsto}{\Longrightarrow}
+\newcommand{\leftrightleadsto}{\Longleftrightarrow}
+
+
+% -- Text subscripts--
+\newcommand{\rel}{_\text{rel}}
+%\newcommand{\st}{\text{st}}
+%
+
+% -- other --
+\newcommand{\com}[2]{\underbrace{#1}_{\textrm{\scriptsize #2}}}
+\newcommand{\with}[1]{\stackrel{\ref{#1}}{\Longrightarrow}}
+%\newcommand{\unit}[1]{\,\textrm{#1}}
+
+%\newcommand{\variance}[1]{\delta \mean{#1}^2}
+\newcommand{\variance}[1]{(\Delta{#1})^2}
+%\newcommand{\variance}[1]{\delta #1^2}
+
+% -- Physics --------------------------------
+\newcommand\op[1]{{\hat{\mathrm{#1}}}}  % Operator
+
+\newcommand\expect[1]{\ensuremath{\left\langle{#1}\right\rangle}} %
+%
+\newcommand{\mean}[1]{\ensuremath{\overline{#1}}} % mean value
+%
+\newcommand{\state}[1]{\ensuremath{\ket{#1}}}
+%
+\newcommand\commutator[2]{\ensuremath{\mathinner{%
+    \mathopen[\,#1,#2\,\mathclose]}}}
+\newcommand{\Commutator}[2]{\ensuremath{\left[\,#1,#2\,\right]}}
+\newcommand{\bigcommutator}[2]{\ensuremath{\bigl[\,#1,#2\,\bigr]}}
+\newcommand{\Bigcommutator}[2]{\ensuremath{\Bigl[\,#1,#2\,\Bigr]}}
+%
+\newcommand\poisson[2]{\mathinner{%
+    \mathopen\{#1,#2\mathclose\}}}
+%
+
+% -- Layout --------------------------------
+
+\newcommand*{\dashfill}{\leavevmode\cleaders\hbox{-}\hfill\kern0pt}
+
+\newcommand*{\midhrulefill}{
+\leavevmode
+\cleaders\hbox to 1ex{\raisebox{.5ex}{\rule{1ex}{.4pt}}}\hfill\kern0pt
+}
+

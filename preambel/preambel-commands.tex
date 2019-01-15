@@ -1,0 +1,98 @@
+%%% Packages for LaTeX - programming
+%
+% Define commands that don't eat spaces.
+\usepackage{xspace}
+% IfThenElse
+\usepackage{ifthen}
+%%% Doc: ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/oberdiek/ifpdf.sty
+% command for testing for pdf-creation
+\usepackage{ifpdf} %\ifpdf \else \fi
+
+%%% Internal Commands: ----------------------------------------------
+\makeatletter
+%
+\providecommand{\IfPackageLoaded}[2]{\@ifpackageloaded{#1}{#2}{}}
+\providecommand{\IfPackageNotLoaded}[2]{\@ifpackageloaded{#1}{}{#2}}
+\providecommand{\IfElsePackageLoaded}[3]{\@ifpackageloaded{#1}{#2}{#3}}
+%
+\newboolean{chapteravailable}%
+\setboolean{chapteravailable}{false}%
+
+\ifcsname chapter\endcsname
+  \setboolean{chapteravailable}{true}%
+\else
+  \setboolean{chapteravailable}{false}%
+\fi
+
+
+\providecommand{\IfChapterDefined}[1]{\ifthenelse{\boolean{chapteravailable}}{#1}{}}%
+\providecommand{\IfElseChapterDefined}[2]{\ifthenelse{\boolean{chapteravailable}}{#1}{#2}}%
+
+\providecommand{\IfDefined}[2]{%
+\ifcsname #1\endcsname
+   #2 %
+\else
+     % do nothing
+\fi
+}
+
+\providecommand{\IfElseDefined}[3]{%
+\ifcsname #1\endcsname
+   #2 %
+\else
+   #3 %
+\fi
+}
+
+\providecommand{\IfElseUnDefined}[3]{%
+\ifcsname #1\endcsname
+   #3 %
+\else
+   #2 %
+\fi
+}
+
+
+%
+% Check for 'draft' mode - commands.
+\newcommand{\IfNotDraft}[1]{\ifx\@draft\@undefined #1 \fi}
+\newcommand{\IfNotDraftElse}[2]{\ifx\@draft\@undefined #1 \else #2 \fi}
+\newcommand{\IfDraft}[1]{\ifx\@draft\@undefined \else #1 \fi}
+%
+
+% Definde frontmatter, mainmatter and backmatter if not defined
+\@ifundefined{frontmatter}{%
+   \newcommand{\frontmatter}{%
+      %In Roemischen Buchstaben nummerieren (i, ii, iii)
+      \pagenumbering{roman}
+   }
+}{}
+\@ifundefined{mainmatter}{%
+   % scrpage2 benoetigt den folgenden switch
+   % wenn \mainmatter definiert ist.
+   \newif\if@mainmatter\@mainmattertrue
+   \newcommand{\mainmatter}{%
+      % -- Seitennummerierung auf Arabische Zahlen zuruecksetzen (1,2,3)
+      \pagenumbering{arabic}%
+      \setcounter{page}{1}%
+   }
+}{}
+\@ifundefined{backmatter}{%
+   \newcommand{\backmatter}{
+      %In Roemischen Buchstaben nummerieren (i, ii, iii)
+      \pagenumbering{roman}
+   }
+}{}
+
+% Pakete speichern die spaeter geladen werden sollen
+\newcommand{\LoadPackagesNow}{}
+\newcommand{\LoadPackageLater}[1]{%
+   \g@addto@macro{\LoadPackagesNow}{%
+      \usepackage{#1}%
+   }%
+}
+
+
+
+\makeatother
+%%% ----------------------------------------------------------------

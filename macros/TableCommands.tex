@@ -1,0 +1,178 @@
+%% Kommandos fuer Tabellen. Entnommen aus The LateX Companion, tabsatz.ps und diversen Dokus:
+
+%%% ---| Farben fuer Tabellen |-------------------
+\IfPackageLoaded{xcolor}{
+   \colorlet{tablesubheadcolor}{gray!30}
+   \colorlet{tableheadcolor}{gray!25}
+   \colorlet{tableblackheadcolor}{black!100}
+   \colorlet{tablerowcolor}{gray!10.0}
+}
+%%% ---------------------------------------------
+
+
+%%% -| Neue Spaltendefinitionen 'columntypes' |--
+%
+% Belegte Spaltentypen:
+% l - links
+% c - zentriert
+% r - rechts
+% p,m,b  - oben, mittig, unten
+% X - tabularx Auto-Spalte
+
+% um Tabellenspalten mit Flattersatz zu setzen, muss \\ vor
+% (z.B.) \raggedright geschuetzt werden:
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+
+
+% Spalten mit Flattersatz und definierte Breite:
+% m{} -> mittig
+% p{} -> oben
+% b{} -> unten
+%
+% Linksbuendig:
+\newcolumntype{v}[1]{>{\PreserveBackslash\RaggedRight\hspace{0pt}}p{#1}}
+\newcolumntype{M}[1]{>{\PreserveBackslash\RaggedRight\hspace{0pt}}m{#1}}
+% % Rechtsbuendig :
+% \newcolumntype{R}[1]{>{\PreserveBackslash\RaggedLeft\hspace{0pt}}m{#1}}
+% \newcolumntype{S}[1]{>{\PreserveBackslash\RaggedLeft\hspace{0pt}}p{#1}}
+% % Zentriert :
+% \newcolumntype{Z}[1]{>{\PreserveBackslash\Centering\hspace{0pt}}m{#1}}
+% \newcolumntype{A}[1]{>{\PreserveBackslash\Centering\hspace{0pt}}p{#1}}
+
+\newcolumntype{Y}{>{\PreserveBackslash\RaggedLeft\hspace{0pt}}X}
+%%% Spalten fuer Mathematik
+%
+% serifenlose Matheschrift
+\newcolumntype{s}[1]{%
+	>{\DC@{.}{,}{#1}\mathsf\bgroup}l%
+	<{\egroup\DV@end}%
+}
+
+% Tabellenspaltentyp fuer den Kopf: (Farbe + Ausrichtung)
+\newcolumntype{H}[1]{>{\columncolor{tableheadcolor}}l}
+
+% aequivalent aus typokurz (fett+grau+links)
+% \newcolumntype{H}{>{\fontseries{b}\selectfont%
+%     \columncolor[gray]{.8}[6pt][0pt]}l}
+%%% --------------------------------------------
+
+
+%%% ---|Listen in Tabellen |--------------------
+\newcommand{\removeindentation}{%
+	\leftmargini=\labelsep%
+	\advance\leftmargini by \labelsep%
+}
+%
+\makeatletter
+\newcommand\tableitemize{
+	\@minipagetrue%
+	\removeindentation
+}
+\makeatother
+%%% --------------------------------------------
+
+%%% ---|Layout der Tabellen |-------------------
+
+% Neue Umgebung fuer Tabellen:
+
+\newenvironment{Tabelle}[2][c]{%
+  \tablestylecommon
+  \begin{longtable}[#1]{#2}
+  }
+  {\end{longtable}%
+  \tablerestoresettings
+}
+
+
+% Groesse der Schrift in Tabellen
+\newcommand{\tablefontsize}{ \footnotesize}
+\newcommand{\tableheadfontsize}{\footnotesize}
+
+% Layout der Tabelle: Ausrichtung, Schrift, Zeilenabstand
+\newcommand\tablestylecommon{%
+  \renewcommand{\arraystretch}{1.4} % Groessere Abstaende zwischen Zeilen
+  \normalfont\normalsize            %
+  \sffamily\tablefontsize           % Serifenlose und kleine Schrift
+  \centering%                       % Tabelle zentrieren
+}
+
+\newcommand{\tablestyle}{
+	\tablestylecommon
+	%\tablealtcolored
+}
+
+% Ruecksetzten der Aenderungen
+\newcommand\tablerestoresettings{%
+  \renewcommand{\arraystretch}{1}% Abstaende wieder zuruecksetzen
+  \normalsize\rmfamily % Schrift wieder zuruecksetzen
+}
+
+% Tabellenkopf: Serifenlos+fett+schraeg+Schriftfarbe
+\newcommand\tablehead{%
+  \tableheadfontsize%
+  \sffamily\bfseries%
+  %\slshape
+  %\color{white}
+}
+
+\newcommand\tablesubheadfont{%
+  \tableheadfontsize%
+  \sffamily\bfseries%
+  \slshape
+  %\color{white}
+}
+
+
+\newcommand\tableheadcolor{%
+	%\rowcolor{tablesubheadcolor}
+	%\rowcolor{tableblackheadcolor}
+	\rowcolor{tableheadcolor}%
+}
+
+\newcommand\tablesubheadcolor{%
+	\rowcolor{tablesubheadcolor}
+	%\rowcolor{tableblackheadcolor}
+}
+
+
+\newcommand{\tableend}{\arrayrulecolor{black}\hline}
+
+% Tabellenkopf (1=Spaltentyp, 2=Text)
+% \newcommand{\tablehead}[2]{
+%   \multicolumn{1}{#1@{}}{%
+%     \raisebox{.1mm}{% Ausrichtung der Beschriftung
+%       #2%
+%     }\rule{0pt}{4mm}}% unsichtbare Linie, die die Kopfzeile hoeher macht
+% }
+
+
+\newcommand{\tablesubhead}[2]{%
+  \multicolumn{#1}{>{\columncolor{tablesubheadcolor}}l}{\tablesubheadfont #2}%
+}
+
+% Tabellenbody (=Inhalt)
+\newcommand\tablebody{%
+\tablefontsize\sffamily\upshape%
+}
+
+\newcommand\tableheadshaded{%
+	\rowcolor{tableheadcolor}%
+}
+\newcommand\tablealtcolored{%
+	\rowcolors{1}{tablerowcolor}{white!100}%
+}
+%%% --------------------------------------------
+
+\newlength{\mylen}
+\newlength{\adjusthspace}
+
+\newenvironment{tabularc}[2]
+{%
+	\setlength\mylen{#2/(#1)-\tabcolsep*2-\arrayrulewidth*(#1+1)/(#1)}%
+	%\setlength{\adjusthspace}{((#2-1)/2)*\linewidth}
+	%\par\noindent
+	%\hspace*{-\the\adjusthspace}
+	\begin{tabular}%{#2}%
+		{*{#1}{v{\the\mylen}}}%
+}
+{\end{tabular}\par}
