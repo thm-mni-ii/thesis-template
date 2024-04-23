@@ -92,7 +92,68 @@
    }%
 }
 
+\newcommand*{\printGenerativeAIDeclaration}{%
+\ifcsdef{declareUseOfGenerativeAITool}{%
+\ifthenelse{\equal{\lang}{ngerman}}%
+{%
+\section*{Erklärung zur Verwendung von generativer KI}
+In Übereinstimmung mit den Empfehlungen der
+Deutschen Forschungsgemeinschaft (DFG)\footnote{DFG formuliert Richtlinien für den Umgang mit generativen Modellen für Text- und Bild: \url{https://www.dfg.de/en/news/news-topics/announcements-proposals/2023/info-wissenschaft-23-72}}
+und denen der Zeitschrift Theoretical Computer Science\footnote{Erklärung zur Verwendung von generativer KI in wissenschaftlichen Arbeiten: \url{https://www.sciencedirect.com/journal/theoretical-computer-science/publish/guide-for-authors}}
+erkläre ich (der Autor/die Autorin) hiermit den Einsatz von generativer KI.
 
+Bei der Vorbereitung dieser Arbeit habe ich 
+\declareUseOfGenerativeAITool\ verwendet, um ausschließlich die Lesbarkeit und Sprache zu verbessern.
+Nach der Verwendung von \declareUseOfGenerativeAITool\ habe ich 
+den Inhalt überprüft und nach Bedarf bearbeitet und übernehme die volle Verantwortung 
+für den Inhalt dieser Arbeit.
+}
+{%
+\section*{Declaration of the use of Generative AI}
+In accordance with the recommendation of 
+the German Research Foundation (DFG - Deutsche Forschungsgemeinschaft)\footnote{DFG Formulates Guidelines for Dealing with Generative Models for Text and Image Creation: \url{https://www.dfg.de/en/news/news-topics/announcements-proposals/2023/info-wissenschaft-23-72}}
+and that of the journal Theoretical Computer Science\footnote{Declaration of generative AI in scientific writing: \url{https://www.sciencedirect.com/journal/theoretical-computer-science/publish/guide-for-authors}}
+I (the author) herby declare the use of generative AI.
+
+During the preparation of this work I used 
+\declareUseOfGenerativeAITool\ in order to improve readability and language, only.
+After using \declareUseOfGenerativeAITool, I reviewed and edited 
+the content as needed and take full responsibility 
+for the content of this thesis.
+}
+}{}
+}
+
+\newcommand*\printDeclarationOfIndependence{%
+\ifthenelse{\equal{\lang}{ngerman}}%
+{%
+\section*{Erklärung der Selbstständigkeit}
+\thispagestyle{empty}
+Hiermit versichere ich, die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt sowie die Zitate deutlich kenntlich gemacht zu haben.
+\vspace{4\baselineskip}\\
+Gießen, den \today \hfill \theAuthor
+\vspace{4\baselineskip}\\
+}
+{%
+\section*{Declaration of Independence}
+\thispagestyle{empty}
+I hereby declare that I have composed the present work independently and have not used any sources or aids other than those cited, and that all quotations have been clearly indicated.
+\vspace{4\baselineskip}\\
+Gießen, on \today \hfill \theAuthor
+\vspace{4\baselineskip}\\
+}
+}
+
+\let\oldauthor\author
+\renewcommand{\author}[1]{\oldauthor{#1}\newcommand{\theAuthor}{#1}}
+
+\let\oldtitle\title
+\renewcommand{\title}[1]{\oldtitle{#1}\newcommand{\theTitle}{#1}}
+
+\newcommand*{\academicTitle}[1]{\newcommand{\theAcedemicTitle}{#1}}
+\newcommand*{\thesis}[1]{\newcommand{\theThesis}{#1}}
+\newcommand*{\firstReferee}[1]{\newcommand{\theFirstReferee}{#1}}
+\newcommand*{\secondReferee}[1]{\newcommand{\theSecondReferee}{#1}}
 
 \makeatother
 %%% ----------------------------------------------------------------

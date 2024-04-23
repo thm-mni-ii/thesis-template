@@ -17,33 +17,41 @@
 \par\end{center}
 
 \noindent \begin{center}
-\textsf{\textbf{\huge Master Thesis / Bachelorthesis}}\textsf{}\\
+\textsf{\textbf{\huge \theThesis}}\textsf{}\\
 \textsf{}\\
-\textsf{\Large Titel der Abschlussarbeit}
+\textsf{\Large \theTitle}
 \par\end{center}{\Large \par}
 
 \vspace{1cm}
 
 
 \begin{center}
-zur Erlangung des akademischen Grades
+\ifthenelse{\equal{\lang}{ngerman}}
+{zur Erlangung des akademischen Grades}
+{for the Degree of}
+
 \par\end{center}
 
 \begin{center}
-{\textsf{\large Master of Science / Bachelor of Science}}
+{\textsf{\large \theAcedemicTitle}}
 \par\end{center}{\large \par}
 
 \begin{center}
-eingereicht im Fachbereich Mathematik, Naturwissenschaften und Informatik an der Technischen Hochschule Mittelhessen{\large \vspace{1cm}
+\ifthenelse{\equal{\lang}{ngerman}}
+{eingereicht im Fachbereich Mathematik, Naturwissenschaften und Informatik an der Technischen Hochschule Mittelhessen}
+{submitted to the Department of Mathematics, Natural Sciences, and Computer Science at the Technische Hochschule Mittelhessen (University of Applied Sciences)}
+
+{\large \vspace{1cm}
 }
 \par\end{center}{\large \par}
 
 \begin{center}
-von
+\ifthenelse{\equal{\lang}{ngerman}}
+{von}{by}
 \par\end{center}
 
 \begin{center}
-<Name einfügen>
+\theAuthor
 \par\end{center}
 
 \begin{center}
@@ -52,21 +60,25 @@ von
 
 \vspace{1.5cm}
 
+\ifthenelse{\equal{\lang}{ngerman}}
+{Referent}
+{Referee}: \theFirstReferee
 
-Referent: Prof. Dr. Referendus
-
-Korreferent: Dr. Dr. Korreferendus
+\ifthenelse{\equal{\lang}{ngerman}}
+{Korreferent}
+{Co-Referee}: \theSecondReferee
 
 \end{titlepage}
 
 
 \thispagestyle{empty}
-\chapter*{Erklärung der Selbstständigkeit}
-\thispagestyle{empty}
-Hiermit versichere ich, die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt sowie die Zitate deutlich kenntlich gemacht zu haben.
-\vspace{4\baselineskip}\\
-Gießen, den \today \hfill <Hier Name einfügen>
-\vspace{4\baselineskip}\\
+
+\cleardoublepage
+
+\printGenerativeAIDeclaration
+
+\printDeclarationOfIndependence
+
 \clearpage
 \mbox{}\thispagestyle{empty}
 
