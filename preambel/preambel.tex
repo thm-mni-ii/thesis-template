@@ -52,12 +52,14 @@
 
 %%% Doc: ftp://tug.ctan.org/pub/tex-archive/macros/latex/required/babel/babel.pdf
 % Languagesetting
-\usepackage[
-%	german,
-	ngerman,
-%	english,
-%	french,
-]{babel}
+
+\ifthenelse{\equal{\lang}{ngerman}}
+{
+	\usepackage[ngerman]{babel}
+}
+{
+	\usepackage[english]{babel}
+}
 
 %%% Doc: ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/xcolor/xcolor.pdf
 % Farben
