@@ -124,6 +124,20 @@ for the content of this thesis.
 }{}
 }
 
+\newcommand*\printGenderDisclaimer{%
+\ifthenelse{\equal{\lang}{ngerman}}%
+{%
+\section*{Gender-Disclaimer}
+\thispagestyle{empty}
+In dieser Arbeit wird aus Gründen der besseren Lesbarkeit das generische Maskulinum verwendet. Weibliche und anderweitige Geschlechteridentitäten werden dabei ausdrücklich mitgemeint, soweit es für die Aussage erforderlich ist.
+}
+{%
+\section*{Gender Disclaimer}
+For reasons of better readability, the generic masculine is used in this work. Female and other gender identities are explicitly included where necessary for the statement.
+}
+}
+
+
 \newcommand*\printDeclarationOfIndependence{%
 \ifthenelse{\equal{\lang}{ngerman}}%
 {%
