@@ -1,3 +1,6 @@
+# Jetbrains
+.idea
+
 # Generated tex files
 
 *.aux
@@ -16,3 +19,4 @@
 *.fls
 *.ind
 *.ilg
+*.nls
