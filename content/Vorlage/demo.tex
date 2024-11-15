@@ -16,50 +16,50 @@
 
 Die Standard Text Schalter erzeugen
 \textbf{fett},
-\textit{kursiv\footnote{kursiv und schräggestellt sind unterschiedliche Schriften und daher nicht das gleiche !} (italic)},
-\textsl{schräggestellt (slanted)},
+\textit{kursiv\footnote{kursiv und schrï¿½ggestellt sind unterschiedliche Schriften und daher nicht das gleiche !} (italic)},
+\textsl{schrï¿½ggestellt (slanted)},
 \textsf{serifenlos (grotesk)},
-\textsc{Kapitälchen} und
+\textsc{Kapitï¿½lchen} und
 \texttt{Schreibmaschinenschrift}.
 Sowie beliebige Kombinationen derselben:
 \textit{\textbf{fett kursiv}},
-\textsl{\textbf{fett schräg}},
+\textsl{\textbf{fett schrï¿½g}},
 \textsf{\textbf{fett serifenlos}},
-\textsc{\textbf{Fette Kapitälchen}}
+\textsc{\textbf{Fette Kapitï¿½lchen}}
 und
-\textsl{\textsf{serifenlos schräg}}. Je nach Schrift sind jedoch nicht alle Kombinationen möglich. In dem Fall bekommt man die Fehlermeldung `Some font shapes were not available, defaults substituted.'
+\textsl{\textsf{serifenlos schrï¿½g}}. Je nach Schrift sind jedoch nicht alle Kombinationen mï¿½glich. In dem Fall bekommt man die Fehlermeldung `Some font shapes were not available, defaults substituted.'
 
 \IfDefined{so}{%
-Mit dem Paket \package{soul} erhält man zusätzlich
+Mit dem Paket \package{soul} erhï¿½lt man zusï¿½tzlich
 \so{Sperrung},
-\ul{Unterstreichen} mit der Möglichkeit des Zeilenumbruchs,
+\ul{Unterstreichen} mit der Mï¿½glichkeit des Zeilenumbruchs,
 \st{durchstreichen}, sowie
 \hl{hervorheben}. Letzteres wird allerdings in dvi nicht korrekt angezeigt.
 }
 \IfDefined{uuline}{%
-Mit dem Paket \package{ulem} erhält man noch weitere Möglichkeiten des Unterstreichens:
+Mit dem Paket \package{ulem} erhï¿½lt man noch weitere Mï¿½glichkeiten des Unterstreichens:
 \uline{einfach untersrichen},
 \uuline{doppelt untersrichen},
 \uwave{wellig untermalt},
 \sout{durchgestrichen} und
-\xout{deutlicher durch­gestrichen}.
+\xout{deutlicher durchï¿½gestrichen}.
 }
 \IfDefined{url}{%
-Etwas spezieller wird es beim Erzeugen von Webseiten Links (URLs). Das Hauptproblem hierbei ist das Umbrechen solcher. Hier ein Beispiel: \url{http://www.dante.de}. Die dafür genutzte Schrift kann in der Präambel eingestellt werden.
+Etwas spezieller wird es beim Erzeugen von Webseiten Links (URLs). Das Hauptproblem hierbei ist das Umbrechen solcher. Hier ein Beispiel: \url{http://www.dante.de}. Die dafï¿½r genutzte Schrift kann in der Prï¿½ambel eingestellt werden.
 }
 % Darstellen von Code, insbesondere \LaTeX-Code z.\,B. |\textbf{fett}| innerhalb von \LaTeX~mit dem Paket \package{fancyvrb}
 
 \IfDefined{enquote}{%
-Zitieren, auch doppelt geht sehr einfach mit dem Paket \package{csquote}. Hier ein Unsinniger Satz: \enquote{Eine Aussage die eine zweite Aussage: \enquote{mit geändertem Anführungszeichen} darstellt}.
+Zitieren, auch doppelt geht sehr einfach mit dem Paket \package{csquote}. Hier ein Unsinniger Satz: \enquote{Eine Aussage die eine zweite Aussage: \enquote{mit geï¿½ndertem Anfï¿½hrungszeichen} darstellt}.
 }
 % ============================================================
 
 \section{Text und Zitate}
 % ------------------------------------------------------------
 \IfDefined{FlushLeft}{%
-\subsection{Linksbündig}
+\subsection{Linksbï¿½ndig}
 %
-Mit dem Paket \package{ragged2e} und der Umgebung \env{FlushLeft} bzw. dem Befehl \command{Raggedright} wird Flattersatz (Gegenteil von Blocksatz) gegenüber dem \LaTeX{} Standard noch verbessert.
+Mit dem Paket \package{ragged2e} und der Umgebung \env{FlushLeft} bzw. dem Befehl \command{Raggedright} wird Flattersatz (Gegenteil von Blocksatz) gegenï¿½ber dem \LaTeX{} Standard noch verbessert.
 
 \begin{FlushLeft}
 Aliquam ultrices libero hendrerit diam. Vestibulum ultrices sapien sit amet elit. Quisque tempor nisl eu sem. Nam lorem lectus, viverra nec, rutrum quis, lobortis nec, magna. Praesent hendrerit tortor vitae elit. Vivamus sed leo at mi elementum semper. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam eu nisi. Nam eget dui a tortor congue imperdiet. Etiam mattis. Nam tristique. Sed malesuada neque ut leo. Aenean est. In id augue.
@@ -67,9 +67,9 @@ Aliquam ultrices libero hendrerit diam. Vestibulum ultrices sapien sit amet elit
 } %Endif
 % ------------------------------------------------------------
 \IfDefined{FlushRight}{%
-\subsection{Rechtsbündig}
+\subsection{Rechtsbï¿½ndig}
 %
-Mit dem Paket \package{ragged2e} und der Umgebung \env{FlushRight} bzw. dem Befehl \command{RaggedLeft} wird Flattersatz (Gegenteil von Blocksatz) gegenüber dem \LaTeX{} Standard noch verbessert.
+Mit dem Paket \package{ragged2e} und der Umgebung \env{FlushRight} bzw. dem Befehl \command{RaggedLeft} wird Flattersatz (Gegenteil von Blocksatz) gegenï¿½ber dem \LaTeX{} Standard noch verbessert.
 
 \begin{FlushRight}
 Aliquam ultrices libero hendrerit diam. Vestibulum ultrices sapien sit amet elit. Quisque tempor nisl eu sem. Nam lorem lectus, viverra nec, rutrum quis, lobortis nec, magna. Praesent hendrerit tortor vitae elit. Vivamus sed leo at mi elementum semper. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam eu nisi. Nam eget dui a tortor congue imperdiet. Etiam mattis. Nam tristique. Sed malesuada neque ut leo. Aenean est. In id augue.
@@ -95,7 +95,7 @@ Aliquam ultrices libero hendrerit diam. Vestibulum ultrices sapien sit amet elit
 
 % ------------------------------------------------------------
 \subsection{Zitat mit quote}
-Ein Text in einer \env{quote} Umgebung\footnote{Für Zitate eignet sich allerdings eher die Umgebung \env{blockquote} vom Paket \package{csquotes}}. Der gesammte Text innerhalb der Umgebung wird von beiden Seiten eingerückt.
+Ein Text in einer \env{quote} Umgebung\footnote{Fï¿½r Zitate eignet sich allerdings eher die Umgebung \env{blockquote} vom Paket \package{csquotes}}. Der gesammte Text innerhalb der Umgebung wird von beiden Seiten eingerï¿½ckt.
 
 \begin{quote}
 Aliquam ultrices libero hendrerit diam. Vestibulum ultrices sapien sit amet elit. Quisque tempor nisl eu sem. Nam lorem lectus, viverra nec, rutrum quis, lobortis nec, magna. Praesent hendrerit tortor vitae elit. Vivamus sed leo at mi elementum semper. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam eu nisi. Nam eget dui a tortor congue imperdiet. Etiam mattis. Nam tristique. Sed malesuada neque ut leo. Aenean est. In id augue.
@@ -119,12 +119,12 @@ vitae ornare odio metus a mi.
 Je nach verwendetem Paket zum Zitieren landen die Zitate direkt im Text (\package{natbib}) oder in den Fussnote bei \package{jurabib} mit der Option `super'.
 
 \minisec{Aufbau von Glasfasern}
-Eine optische Faser besteht in der Mitte aus dem Kern \engl{core} welcher von einem Mantel \engl{cladding} umgeben ist. Der Licht führende Teil ist der Kern. Entscheidend für die Lichtwellenleitung ist der Brechungsindexsprung vom Licht führenden Kern zum Mantel.
-Wegen ihres Aufbaus werden diese Fasern auch \emph{Stufenindexfasern}\footnote{Es existieren noch weiter Typen  von Glasfasern, für Faserlaser spielen diese jedoch nur eine geringe Bedeutung und werden daher auch nicht weiter betrachtet. Eine Klassifikation findet man in \cite{Yeh}} genannt.
-Sowohl der Kern als auch der Mantel werden typischerweise aus Quarzglas gefertigt, wobei der höhere Brechungsindex im Kern durch zusätzliche Dotierung mit GeO\textsubscript{2} oder P\textsubscript{2}O\textsubscript{5} erreicht wird \cite{Agrawal}.
-Typische Brechungsindexzahlen für Kern und Mantel sind 1,47 und 1,46 \cite{GuidetofiberOptics}.
-Umgeben wird eine Faser zusätzlich von einer Beschichtung \engl{coating}, die als Schutz dient.
-Die Beschichtung besteht aus einem Polymer, das die Faser vor äußeren chemischen Einflüssen schützt und die mechanische Stabilität verbessert.
+Eine optische Faser besteht in der Mitte aus dem Kern \engl{core} welcher von einem Mantel \engl{cladding} umgeben ist. Der Licht fï¿½hrende Teil ist der Kern. Entscheidend fï¿½r die Lichtwellenleitung ist der Brechungsindexsprung vom Licht fï¿½hrenden Kern zum Mantel.
+Wegen ihres Aufbaus werden diese Fasern auch \emph{Stufenindexfasern}\footnote{Es existieren noch weiter Typen  von Glasfasern, fï¿½r Faserlaser spielen diese jedoch nur eine geringe Bedeutung und werden daher auch nicht weiter betrachtet. Eine Klassifikation findet man in \cite{Yeh}} genannt.
+Sowohl der Kern als auch der Mantel werden typischerweise aus Quarzglas gefertigt, wobei der hï¿½here Brechungsindex im Kern durch zusï¿½tzliche Dotierung mit GeO\textsubscript{2} oder P\textsubscript{2}O\textsubscript{5} erreicht wird \cite{Agrawal}.
+Typische Brechungsindexzahlen fï¿½r Kern und Mantel sind 1,47 und 1,46 \cite{GuidetofiberOptics}.
+Umgeben wird eine Faser zusï¿½tzlich von einer Beschichtung \engl{coating}, die als Schutz dient.
+Die Beschichtung besteht aus einem Polymer, das die Faser vor ï¿½uï¿½eren chemischen Einflï¿½ssen schï¿½tzt und die mechanische Stabilitï¿½t verbessert.
 
 
 % ============================================================
@@ -132,7 +132,7 @@ Die Beschichtung besteht aus einem Polymer, das die Faser vor äußeren chemischen
 
 % ------------------------------------------------------------
 \subsection{itemize}
-Dies ist die Standard Aufzählungsliste von \LaTeXe. Sie hat einen Abstand zwischen den Einträgen um bei Längeren Zeilen das Lesen zu erleichtern.
+Dies ist die Standard Aufzï¿½hlungsliste von \LaTeXe. Sie hat einen Abstand zwischen den Eintrï¿½gen um bei Lï¿½ngeren Zeilen das Lesen zu erleichtern.
 
 \begin{itemize}
    \item Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -166,7 +166,7 @@ mit mehr als einer Ebene
 
 % ------------------------------------------------------------
 \subsection{enumerate}
-Dies ist die Standard Nummerierungsliste von \LaTeXe{}. Sie hat einen Abstand zwischen den Einträgen um bei Längeren Zeilen das Lesen zu erleichtern.
+Dies ist die Standard Nummerierungsliste von \LaTeXe{}. Sie hat einen Abstand zwischen den Eintrï¿½gen um bei Lï¿½ngeren Zeilen das Lesen zu erleichtern.
 
 \begin{enumerate}
    \item Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -192,11 +192,11 @@ Dies ist die Standard Nummerierungsliste von \LaTeXe{}. Sie hat einen Abstand zw
 %
 \subsection{Kompakte Liste}
 
-Die eleganteste Lösung bietet das Paket \package{enumitem} mit der Option `noitemsep'
+Die eleganteste Lï¿½sung bietet das Paket \package{enumitem} mit der Option `noitemsep'
 \begin{itemize}[noitemsep]
 \item Diese Umgebung
 \item sollte man nur nutzen,
-\item wenn die Einträge nicht länger als eine Zeile sind
+\item wenn die Eintrï¿½ge nicht lï¿½nger als eine Zeile sind
 \end{itemize}
 
 % ------------------------------------------------------------
@@ -214,8 +214,8 @@ Dies ist die \env{enumerate} Umgebung des Paketes \package{enumitem} mit der Opt
 \subsection{description}
 %
 \begin{description}
-\item[Beschreibung] Die Umgebung \env{description} dient zum Erläutern.
-\item[Flüsse] Elbe, Weser
+\item[Beschreibung] Die Umgebung \env{description} dient zum Erlï¿½utern.
+\item[Flï¿½sse] Elbe, Weser
 \item[Meere] Indischer, Pazifischer Ozean, Mittelmeer
 \end{description}
 
@@ -271,7 +271,7 @@ massa.
    \subfloat[Erste Bild]{\includegraphics[width=0.3\textwidth]{images/latex}}
       \hspace{0.1\textwidth}
    \subfloat[Zweites Bild]{\includegraphics[width=0.3\textwidth]{images/latex}}
-   \caption{Ein Beispiel für subfigures}
+   \caption{Ein Beispiel fï¿½r subfigures}
 \end{figure}
 
 } % Endif
@@ -284,7 +284,7 @@ Pellentesque et lectus a est imperdiet egestas. Fusce tempus facilisis lacus. Mo
 
 \begin{center}
    \includegraphics[width=0.3\textwidth]{images/latex}
-   \captionof{figure}{Ein Beispiel für ein nichtfließendes Bild mit Caption durch `captionof'}
+   \captionof{figure}{Ein Beispiel fï¿½r ein nichtflieï¿½endes Bild mit Caption durch `captionof'}
 \end{center}
 
 Nullam sed enim quis enim blandit commodo. Nulla ultricies metus eu lorem. Phasellus tincidunt ullamcorper orci. Cras lectus metus, luctus id, vulputate quis, tempor non, nulla. Nullam ut eros et elit faucibus viverra. Cras eu turpis eu urna ullamcorper feugiat. Aliquam bibendum rhoncus tortor. Etiam eu orci. In congue congue quam. Maecenas nec sem quis mi ultrices luctus. Aliquam et risus eu eros molestie pellentesque. Aenean quis purus sit amet lorem porttitor consectetuer.
@@ -297,7 +297,7 @@ Nullam sed enim quis enim blandit commodo. Nulla ultricies metus eu lorem. Phase
 \subsection{wrapfigure}
 \begin{wrapfigure}{r}{0.3\textwidth}
 	\includegraphics[width=0.3\textwidth]{images/latex}
-	\caption{Ein Beispiel für wrapfigure }
+	\caption{Ein Beispiel fï¿½r wrapfigure }
    %\vspace{-2\baselineskip}
 \end{wrapfigure}
 Suspendisse vel felis. Ut lorem lorem, interdum
@@ -317,7 +317,7 @@ nonummy in, fermentum faucibus, egestas vel, odio.
 %
 \begin{wrapfloat}{figure}{r}{0.3\textwidth}
 	\includegraphics[width=0.3\textwidth]{images/latex}
-	\caption{Ein Beispiel für wrapfloat }
+	\caption{Ein Beispiel fï¿½r wrapfloat }
 \end{wrapfloat}
 Ut vulputate lorem a ante. Praesent risus purus, feugiat ac, dignissim at, scelerisque nec, tortor. Nulla a ipsum. Integer ut lorem. Cras convallis pulvinar velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempus. Fusce suscipit semper est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sagittis pretium dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In velit. Nunc porta feugiat ipsum. Sed dolor. Phasellus porttitor mattis libero. Nam justo mi, tincidunt vitae, mattis sit amet, dapibus et, mi. Nunc in nisi eu lacus ultricies feugiat. Donec volutpat posuere arcu.
 
@@ -331,7 +331,7 @@ Ut vulputate lorem a ante. Praesent risus purus, feugiat ac, dignissim at, scele
 %
 \begin{floatingfigure}[r]{0.3\textwidth}
    \includegraphics[width=0.3\textwidth]{images/latex}
-   \caption{Ein Beispiel für floatingfigure}
+   \caption{Ein Beispiel fï¿½r floatingfigure}
 \end{floatingfigure}
 
 Ut vulputate lorem a ante. Praesent risus purus, feugiat ac, dignissim at, scelerisque nec, tortor. Nulla a ipsum. Integer ut lorem. Cras convallis pulvinar velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempus. Fusce suscipit semper est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sagittis pretium dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In velit. Nunc porta feugiat ipsum. Sed dolor. Phasellus porttitor mattis libero. Nam justo mi, tincidunt vitae, mattis sit amet, dapibus et, mi. Nunc in nisi eu lacus ultricies feugiat. Donec volutpat posuere arcu.
@@ -373,9 +373,9 @@ Pellentesque mollis nunc sed mauris tempor molestie. Aliquam adipiscing nisi eu 
 % ============================================================
 \section{Tabellen}
 
-Bei allen hier vorgestellten Tabellen sind Befehle in die Tabellen eingefügt die den Stil verändern.
+Bei allen hier vorgestellten Tabellen sind Befehle in die Tabellen eingefï¿½gt die den Stil verï¿½ndern.
 
-%--Einstellungen für Tabellen ----------
+%--Einstellungen fï¿½r Tabellen ----------
 \renewcommand\tablestylecommon{%
   \renewcommand{\arraystretch}{1.4} % Groessere Abstaende zwischen Zeilen
   \normalfont\normalsize            %
@@ -430,7 +430,7 @@ Inhalt & Inhalt  & Inhalt \tabularnewline
 \IfDefined{tabularx}{%
 %
 \subsection{Tabelle mit tabularx}
-Diese Tabelle enthält zusätzlichen Code für den Stil des Kopfes der Tabelle.
+Diese Tabelle enthï¿½lt zusï¿½tzlichen Code fï¿½r den Stil des Kopfes der Tabelle.
 %--------------------------------------------------------
 \begin{table}[H]
 \tablestyle
@@ -457,7 +457,7 @@ Diese Tabelle enthält zusätzlichen Code für den Stil des Kopfes der Tabelle.
 \subsection{Tabelle mit alternatierender Farbe}
 
 
-%--Einstellungen für Tabellen ----------
+%--Einstellungen fï¿½r Tabellen ----------
 
 \colorlet{tablesubheadcolor}{gray!40}
 \colorlet{tableheadcolor}{gray!25}
@@ -511,11 +511,11 @@ Diese Tabelle enthält zusätzlichen Code für den Stil des Kopfes der Tabelle.
 } % End If
 % ------------------------------------------------------------
 \IfDefined{LTXtable}{%
-\subsection{Seitenübergreifende Tabellen}
+\subsection{Seitenï¿½bergreifende Tabellen}
 
 
 
-%--Einstellungen für Tabellen ----------
+%--Einstellungen fï¿½r Tabellen ----------
 
 \colorlet{tablerowcolor}{gray!10.0}
 
@@ -548,7 +548,7 @@ Diese Tabelle enthält zusätzlichen Code für den Stil des Kopfes der Tabelle.
 %
 % \subsection{fancyvrb}
 % %
-% Das Paket \package{fancyvrb} bietet Umfangreiche Möglichkeiten Code  darzustellen. Hier ein Beispiel:
+% Das Paket \package{fancyvrb} bietet Umfangreiche Mï¿½glichkeiten Code  darzustellen. Hier ein Beispiel:
 % %
 % \begin{Verbatim}[frame=single,framesep=5mm,numbers=left,rulecolor=\color{red}]
 % \documentclass[a4paper,11pt,german]{scrreprt}
@@ -561,7 +561,7 @@ Diese Tabelle enthält zusätzlichen Code für den Stil des Kopfes der Tabelle.
 %
 % \subsection{listings}
 % %
-% Für Programm Listings nutzt man am besten das Paket \package{listings}. Hier ein einfaches Beispiel mit Visual Basic Code:
+% Fï¿½r Programm Listings nutzt man am besten das Paket \package{listings}. Hier ein einfaches Beispiel mit Visual Basic Code:
 % \begin{lstlisting}[firstnumber=last]
 % ' *************************************************
 % ' Diagramme_entfernen()
@@ -598,7 +598,7 @@ Diese Tabelle enthält zusätzlichen Code für den Stil des Kopfes der Tabelle.
 
 \subsection{amsmath Umgebungen}
 
-Im folgenden sind einige Beispiel für amsmath Umgebungen aufgelistet. Diese sind der Dokumentation `mathmode.pdf' von Herbert Voss entnommen.
+Im folgenden sind einige Beispiel fï¿½r amsmath Umgebungen aufgelistet. Diese sind der Dokumentation `mathmode.pdf' von Herbert Voss entnommen.
 
 \subsubsection{align}
 \begin{align}
@@ -662,7 +662,7 @@ f(x) & = e^{-E/kT}
 % ------------------------------------------------------------
 \IfDefined{index}{
 %
-\subsection{Text enhält Index}
+\subsection{Text enhï¿½lt Index}
 Lorem\index{Lorem} ipsum\index{ipsum} dolor\index{dolor} sit amet, consectetuer adipiscing elit
 Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi.
 
@@ -672,16 +672,16 @@ Nam dui ligula, fringilla a, euismod sodales, sollicitudin vel, wisi.
 %
 \subsection{Symbole}
 Es folgen einige Symbole die im Symbolverzeichnis auftauchen sollen: \\
-\%  \&  §
+\%  \&  ï¿½
 \nomenclature{\%}{Prozentzeichnen}
-\nomenclature{\&}{Kaufmänisches Und}
-\nomenclature{§}{Paragraph}
+\nomenclature{\&}{Kaufmï¿½nisches Und}
+\nomenclature{ï¿½}{Paragraph}
 
 } % Endif
 % ------------------------------------------------------------
 \IfDefined{acs}{
 %
-\subsection{Abkürzungsverzeichnis}
+\subsection{Abkï¿½rzungsverzeichnis}
 
 \minisec{Beispieltext aus der acronym Dokumentation}
 In the early nineties, \acs{GSM} was deployed in many European
