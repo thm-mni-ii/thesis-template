@@ -1,8 +1,10 @@
+# OS
+.DS_Store
+
 # Jetbrains
 .idea
 
 # Generated tex files
-
 *.aux
 *.bbl
 *.blg
