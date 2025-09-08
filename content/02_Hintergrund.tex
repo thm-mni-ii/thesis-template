@@ -1,3 +1,28 @@
 % Alles was man wissen muss um das Konzept zu verstehen.
 
 \chapter{Hintergrund}
+
+% Beispiel: Zwei Boxen nebeneinander für Vergleiche oder Gegenüberstellungen
+\begin{figure}[htbp] % [H] verwenden, wenn es wirklich fix stehen soll
+\vspace{0.4cm}
+\begin{tcbraster}[raster columns=2, 
+raster equal height, % optional feste Höhe
+raster column skip=5mm]
+\begin{tcolorbox}[title=\textbf{Box A}, colback=white, arc=3mm, boxrule=1.5pt]
+Boxen eignen sich, um Inhalte übersichtlich hervorzuheben. Ideal für Listen oder zentrale Punkte.
+\begin{itemize}
+\item Punkt A
+\item Punkt B
+\item Punkt C
+\end{itemize}
+\end{tcolorbox}
+\begin{tcolorbox}[title=\textbf{Box B}, colback=white, arc=3mm, boxrule=1.5pt]
+Diese Box kann als Gegenstück oder für Vergleiche genutzt werden, z.\,B. Unterschiede oder Alternativen.
+\begin{itemize}
+\item Punkt A
+\item Punkt B
+\item Punkt C
+\end{itemize}
+\end{tcolorbox}
+\end{tcbraster}
+\end{figure}
